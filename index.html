@@ -20,6 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto+Flex:opsz,wght@8..144,200&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -63,13 +64,16 @@
             </div>
           </form>
           <div class="principal-weather">
-            <h1>Mexico City</h1>
+            <h1 id="city"></h1>
             <h2>Sunday 21:30</h2>
-            <h3><strong>28° </strong>/ 12°</h3>
-            <h4>28°C</h4>
-            <h5>Sunny</h5>
-            <h6>Humidity: 10%</h6>
-            <h7>Wind: 14 km/h</h7>
+            <h3>
+              <strong><span id="maxTemp"></span></strong>° /
+              <span id="minTemp"></span>°
+            </h3>
+            <h4><span id="temperature"></span>°C</h4>
+            <h5 id="description"></h5>
+            <h6>Humidity: <span id="humidity"></span>%</h6>
+            <h7>Wind: <span id="wind"></span> km/h</h7>
           </div>
           <div class="row secondary-weather">
             <div class="col day">
