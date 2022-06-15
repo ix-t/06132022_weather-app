@@ -8,13 +8,9 @@
 }
 
 .principal-cities {
-  color: blue;
+  color: #005792;
   font-size: 14px;
   text-decoration: underline;
-}
-
-.btn-info {
-  color: #fff;
 }
 
 .search-engine {
@@ -27,8 +23,8 @@
 
 .principal-weather {
   text-align: center;
-  color: #0370c6;
-  background: #d9edfd;
+  color: #005792;
+  background: #dde9fa;
   padding: 50px 30px 30px;
   margin: 20px auto;
   width: 310px;
@@ -69,22 +65,21 @@ h6 {
   margin: 0 84px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .day {
   text-align: center;
-  color: #5c636a;
-  background: #e9ebee;
+  color: #005792;
+  background: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
   font-size: 14px;
   font-family: "Roboto Flex", sans-serif;
   padding: 10px 5px;
   margin: 0 3px;
-  border: 1px solid #e9ebee;
+  border: 1px solid none;
   border-radius: 10px;
-}
-
-.weather-icon-small {
-  color: #5c636a;
-  font-size: 25px;
-  padding: 10px 0;
 }
 
 footer {
@@ -93,7 +88,6 @@ footer {
   margin-top: 5px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+a {
+  color: #005792;
 }
