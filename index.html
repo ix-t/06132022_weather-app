@@ -41,22 +41,31 @@
               </button>
             </div>
           </div>
-          <form>
+          <form id="search-form">
             <div class="row g-1 justify-content-center search-engine">
               <div class="col-sm-6 search-engine-element">
                 <input
-                  type="text"
+                  type="search"
                   class="form-control form-control-sm"
-                  id="colFormLabelSm"
+                  id="cityInput"
                   placeholder="Enter a city"
+                  autocomplete="off"
                 />
               </div>
               <div class="col-auto search-engine-element">
                 <span>
-                  <button type="button" class="btn btn-primary btn-sm">
+                  <button
+                    type="submit"
+                    value="search"
+                    class="btn btn-primary btn-sm"
+                  >
                     Search
                   </button>
-                  <button type="button" class="btn btn-secondary btn-sm">
+                  <button
+                    type="button"
+                    value="current"
+                    class="btn btn-secondary btn-sm"
+                  >
                     Current
                   </button>
                 </span>

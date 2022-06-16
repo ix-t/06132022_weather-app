@@ -18,8 +18,6 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
-
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
@@ -141,13 +139,26 @@ function showForecastTemperature(response) {
   );
 }
 
-let city = "New York";
-let lat = "40.7143";
-let lon = "-74.006";
-let apiKey = "31ee5db17333dd8cbc0df1677e0dc2c4";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-let forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+/* Missing to coordinates part function*/
+function search(city) {
+  let lat = "40.7143";
+  let lon = "-74.006";
+  let apiKey = "31ee5db17333dd8cbc0df1677e0dc2c4";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 
-axios.get(apiUrl).then(showTemperature);
-axios.get(forecastApiUrl).then(showForecastTemperature);
+  axios.get(apiUrl).then(showTemperature);
+  axios.get(forecastApiUrl).then(showForecastTemperature);
+}
+
+function getCity(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#cityInput");
+  search(cityInputElement.value);
+}
+
+search("New York");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", getCity);
