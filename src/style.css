@@ -8,9 +8,17 @@
 }
 
 .principal-cities {
-  color: #005792;
+  color: #0370c6;
   font-size: 14px;
   text-decoration: underline;
+}
+
+.btn-info {
+  color: #fff;
+}
+
+.btn-info:hover {
+  color: #fff;
 }
 
 .search-engine {
@@ -23,17 +31,17 @@
 
 .principal-weather {
   text-align: center;
-  color: #005792;
-  background: #dde9fa;
+  color: #0370c6;
+  background: #d9edfd;
   padding: 50px 30px 30px;
   margin: 20px auto;
-  width: 310px;
+  width: 305px;
   border: 1px solid #d9edfd;
   border-radius: 50%;
 }
 
 h1,
-h4 {
+h3 {
   font-size: 25px;
   font-weight: bold;
   font-family: "DM Serif Display", serif;
@@ -42,22 +50,21 @@ h4 {
 }
 
 h2,
-h3,
+h4,
 h5,
-h6,
-h7 {
+h6 {
   font-size: 15px;
   font-family: "Roboto Flex", sans-serif;
   margin: 0 auto;
   padding: 0;
 }
 
-h5 {
+h4 {
   text-transform: capitalize;
 }
 
 h3,
-h6 {
+h5 {
   margin-top: 20px;
 }
 
@@ -72,14 +79,29 @@ img {
 
 .day {
   text-align: center;
-  color: #005792;
-  background: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  color: #fff;
+  background: linear-gradient(
+    -150deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
   font-size: 14px;
   font-family: "Roboto Flex", sans-serif;
   padding: 10px 5px;
   margin: 0 3px;
   border: 1px solid none;
   border-radius: 10px;
+}
+
+.day1,
+.day2,
+.day3,
+.day4,
+.day5 {
+  color: #5c636ae3;
+  font-size: 15px;
+  font-family: "DM Serif Display", serif;
+  font-weight: bold;
 }
 
 footer {
@@ -89,5 +111,5 @@ footer {
 }
 
 a {
-  color: #005792;
+  color: #0370c6;
 }

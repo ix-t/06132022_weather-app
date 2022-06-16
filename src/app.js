@@ -21,7 +21,6 @@ function showTemperature(response) {
   console.log(response.data);
 
   let cityElement = document.querySelector("#city");
-  let countryElement = document.querySelector("#country");
   let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -29,7 +28,6 @@ function showTemperature(response) {
   let dateElement = document.querySelector("#date");
 
   cityElement.innerHTML = response.data.name;
-  countryElement.innerHTML = response.data.sys.country;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -47,8 +45,6 @@ function formatForecastDay(timestamp) {
 }
 
 function showForecastTemperature(response) {
-  console.log(response.data);
-
   /* Day 1 [0] */
   let day1Element = document.querySelector("#day1");
   let maxTemp1Element = document.querySelector("#maxTemp1");
@@ -145,9 +141,9 @@ function showForecastTemperature(response) {
   );
 }
 
-let city = "Mexico City";
-let lat = "19.4285";
-let lon = "-99.1277";
+let city = "New York";
+let lat = "40.7143";
+let lon = "-74.006";
 let apiKey = "31ee5db17333dd8cbc0df1677e0dc2c4";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
