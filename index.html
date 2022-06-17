@@ -75,7 +75,13 @@
           <div class="principal-weather">
             <h1 id="city"></h1>
             <h2>Last updated: <span id="date"></span></h2>
-            <h3><span id="temperature"></span>°C</h3>
+            <h3>
+              <span id="temperature"></span>
+              <span class="units">
+                <a href="#" class="active" id="celsiusLink">°C</a> |
+                <a href="#" id="fahrenheitLink">°F</a>
+              </span>
+            </h3>
             <h4 id="description"></h4>
             <h5>Humidity: <span id="humidity"></span>%</h5>
             <h6>Wind: <span id="wind"></span> km/h</h6>

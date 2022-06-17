@@ -69,6 +69,22 @@ h5 {
   margin-top: 20px;
 }
 
+.principal-weather .units {
+  position: relative;
+  font-size: 15px;
+  top: -5px;
+}
+
+.principal-weather .active {
+  color: #0370c6;
+  text-decoration: none;
+  cursor: default;
+}
+
+.principal-weather .active:hover {
+  text-decoration: none;
+}
+
 .secondary-weather {
   margin: 0 84px;
 }
