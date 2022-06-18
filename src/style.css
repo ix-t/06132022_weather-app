@@ -33,11 +33,11 @@
 .principal-weather {
   text-align: center;
   color: #0370c6;
-  background: #d9edfd;
+  background: #e9ebee;
   padding: 50px 30px 30px;
   margin: 20px auto;
   width: 305px;
-  border: 1px solid #d9edfd;
+  border: 1px solid #e9ebee;
   border-radius: 50%;
 }
 
@@ -96,12 +96,15 @@ img {
 
 .day {
   text-align: center;
-  color: #fff;
+  color: rgb(255, 255, 255);
   background: linear-gradient(
-    -150deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(0, 0, 0, 0.5) 100%
+    111.4deg,
+    rgb(12, 85, 141, 0.7) 8.4%,
+    rgb(162, 195, 238) 35.4%,
+    rgb(205, 181, 93, 0.75) 70.6%,
+    rgb(249, 140, 69, 0.8) 88.2%
   );
+
   font-size: 14px;
   font-family: "Roboto Flex", sans-serif;
   padding: 10px 5px;
@@ -115,9 +118,7 @@ img {
 .day3,
 .day4,
 .day5 {
-  color: #5c636ae3;
   font-size: 15px;
-  font-family: "DM Serif Display", serif;
   font-weight: bold;
 }
 
