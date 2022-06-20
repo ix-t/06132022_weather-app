@@ -1,3 +1,4 @@
+// For principal-weather
 function formatDate(timestamp) {
   let date = new Date(timestamp);
 
@@ -17,6 +18,37 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+// For secondary-weather (forecast)
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2 day">
+      <div class="weather-forecast-date">${day}</div>
+      <img src="#" alt="" id="icon" />
+      <div class="weather-forecast-temperature">
+        <strong>
+          <span id="forecast-max-temp">18°</span>
+        </strong>
+      </div>
+      <div>
+        <span id="forecast-min-temp">12°</span>
+      </div>
+    </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+// For principal-weather
 function showTemperature(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
@@ -44,114 +76,17 @@ function formatForecastDay(timestamp) {
   return `${day}`;
 }
 
-function showForecastTemperature(response) {
-  /* Day 1 [0] */
-  let day1Element = document.querySelector("#day1");
-  let maxTemp1Element = document.querySelector("#maxTemp1");
-  let minTemp1Element = document.querySelector("#minTemp1");
-  let icon1Element = document.querySelector("#icon1");
-
-  day1Element.innerHTML = formatForecastDay(response.data.list[0].dt * 1000);
-  maxTemp1Element.innerHTML = Math.round(response.data.list[7].main.temp_max);
-  minTemp1Element.innerHTML = Math.round(response.data.list[0].main.temp_min);
-
-  icon1Element.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`
-  );
-  icon1Element.setAttribute(
-    "alt",
-    response.data.list[0].weather[0].description
-  );
-
-  /* Day 2 [8] */
-  let day2Element = document.querySelector("#day2");
-  let maxTemp2Element = document.querySelector("#maxTemp2");
-  let minTemp2Element = document.querySelector("#minTemp2");
-  let icon2Element = document.querySelector("#icon2");
-
-  day2Element.innerHTML = formatForecastDay(response.data.list[8].dt * 1000);
-  maxTemp2Element.innerHTML = Math.round(response.data.list[15].main.temp_max);
-  minTemp2Element.innerHTML = Math.round(response.data.list[8].main.temp_min);
-
-  icon2Element.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.list[8].weather[0].icon}@2x.png`
-  );
-  icon2Element.setAttribute(
-    "alt",
-    response.data.list[8].weather[0].description
-  );
-
-  /* Day 3 [16] */
-  let day3Element = document.querySelector("#day3");
-  let maxTemp3Element = document.querySelector("#maxTemp3");
-  let minTemp3Element = document.querySelector("#minTemp3");
-  let icon3Element = document.querySelector("#icon3");
-
-  day3Element.innerHTML = formatForecastDay(response.data.list[16].dt * 1000);
-  maxTemp3Element.innerHTML = Math.round(response.data.list[23].main.temp_max);
-  minTemp3Element.innerHTML = Math.round(response.data.list[16].main.temp_min);
-
-  icon3Element.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.list[16].weather[0].icon}@2x.png`
-  );
-  icon3Element.setAttribute(
-    "alt",
-    response.data.list[16].weather[0].description
-  );
-
-  /* Day 4 [24] */
-  let day4Element = document.querySelector("#day4");
-  let maxTemp4Element = document.querySelector("#maxTemp4");
-  let minTemp4Element = document.querySelector("#minTemp4");
-  let icon4Element = document.querySelector("#icon4");
-
-  day4Element.innerHTML = formatForecastDay(response.data.list[24].dt * 1000);
-  maxTemp4Element.innerHTML = Math.round(response.data.list[31].main.temp_max);
-  minTemp4Element.innerHTML = Math.round(response.data.list[24].main.temp_min);
-
-  icon4Element.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.list[24].weather[0].icon}@2x.png`
-  );
-  icon4Element.setAttribute(
-    "alt",
-    response.data.list[24].weather[0].description
-  );
-
-  /* Day 5 [32] */
-  let day5Element = document.querySelector("#day5");
-  let maxTemp5Element = document.querySelector("#maxTemp5");
-  let minTemp5Element = document.querySelector("#minTemp5");
-  let icon5Element = document.querySelector("#icon5");
-
-  day5Element.innerHTML = formatForecastDay(response.data.list[32].dt * 1000);
-  maxTemp5Element.innerHTML = Math.round(response.data.list[39].main.temp_max);
-  minTemp5Element.innerHTML = Math.round(response.data.list[32].main.temp_min);
-
-  icon5Element.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.list[32].weather[0].icon}@2x.png`
-  );
-  icon5Element.setAttribute(
-    "alt",
-    response.data.list[32].weather[0].description
-  );
-}
-
 /* Missing to coordinates part function*/
 function search(city) {
-  let lat = "40.7143";
-  let lon = "-74.006";
+  //let lat = "40.7143";
+  //let lon = "-74.006";
   let apiKey = "31ee5db17333dd8cbc0df1677e0dc2c4";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  let forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  //let forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemperature);
-  axios.get(forecastApiUrl).then(showForecastTemperature);
+  //axios.get(forecastApiUrl).then(showForecastTemperature);
 }
 
 function getCity(event) {
@@ -190,3 +125,4 @@ let celsiusLink = document.querySelector("#celsiusLink");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("New York");
+showForecast();
