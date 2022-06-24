@@ -9,15 +9,15 @@ body {
 }
 
 .weather-app {
-  padding: 25px;
+  padding: 30px;
 }
 
 .btn-info {
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 .btn-info:hover {
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 .search-engine {
@@ -94,7 +94,7 @@ h4 {
 
 .icon {
   position: relative;
-  left: 35px;
+  left: 15px;
   max-width: 90px;
   height: auto;
 }
@@ -114,7 +114,7 @@ img {
   background: linear-gradient(
     -180deg,
     rgba(255, 255, 255, 0.5) 0%,
-    rgba(0, 0, 0, 0.4) 100%
+    rgba(0, 0, 0, 0.4) 90%
   );
   font-size: 14px;
   font-family: "Roboto Flex", sans-serif;
@@ -130,10 +130,13 @@ img {
 }
 
 footer {
-  font-size: 14px;
+  color: black;
+  font-size: 12px;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 a {
-  color: #0370c6;
+  color: #1159c5;
+  font-weight: bold;
 }
