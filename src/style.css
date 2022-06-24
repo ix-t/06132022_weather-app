@@ -34,7 +34,7 @@ body {
   background: rgb(255, 255, 255, 0.55);
   padding: 50px 30px 30px;
   margin: 20px auto;
-  width: 305px;
+  width: 330px;
   border: 1px solid none;
   border-radius: 50%;
 }
@@ -70,6 +70,12 @@ h5 {
   margin-top: 10px;
 }
 
+h3,
+h4 {
+  position: relative;
+  right: 25px;
+}
+
 .principal-weather .units {
   position: relative;
   font-size: 15px;
@@ -87,6 +93,8 @@ h5 {
 }
 
 .icon {
+  position: relative;
+  left: 35px;
   max-width: 90px;
   height: auto;
 }
