@@ -76,8 +76,6 @@ function formatDate(timestamp) {
 
 // Function response for principal-weather
 function showTemperature(response) {
-  console.log(response.data);
-
   let cityElement = document.querySelector("#city");
   let iconElement = document.querySelector("#icon");
   let temperatureElement = document.querySelector("#temperature");
@@ -154,12 +152,16 @@ function showTemperature(response) {
 
 // API call for principal-weather (city)
 function search(city) {
-  let endpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiKey = "31ee5db17333dd8cbc0df1677e0dc2c4";
-  let units = "metric";
-  let apiUrl = `${endpoint}?q=${city}&appid=${apiKey}&units=${units}`;
+  if (city !== "") {
+    let endpoint = "https://api.openweathermap.org/data/2.5/weather";
+    let apiKey = "31ee5db17333dd8cbc0df1677e0dc2c4";
+    let units = "metric";
+    let apiUrl = `${endpoint}?q=${city}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(showTemperature);
+    axios.get(apiUrl).then(showTemperature);
+  } else {
+    alert("😊 Please, enter a city name.");
+  }
 }
 
 // Function to get the city from the search box
@@ -175,8 +177,6 @@ form.addEventListener("submit", getCity);
 
 // API call for current principal-weather (latitude and longitude)
 function showPosition(position) {
-  console.log(position.coords);
-
   let endpoint = "https://api.openweathermap.org/data/2.5/weather";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
