@@ -80,6 +80,7 @@ function showTemperature(response) {
   console.log(response.data);
 
   let cityElement = document.querySelector("#city");
+  let iconElement = document.querySelector("#icon");
   let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -89,6 +90,10 @@ function showTemperature(response) {
   celsiusTemp = response.data.main.temp;
 
   cityElement.innerHTML = response.data.name;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   temperatureElement.innerHTML = Math.round(celsiusTemp);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -97,60 +102,60 @@ function showTemperature(response) {
 
   getForecast(response.data.coord);
 
-  let iconElement = response.data.weather[0].icon;
+  let todayIcon = response.data.weather[0].icon;
   let backgroundImage = document.querySelector("#background-image");
 
-  if (iconElement === "01d") {
+  if (todayIcon === "01d") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/01d-clear-sky.jpg)`
     );
-  } else if (iconElement === "01n") {
+  } else if (todayIcon === "01n") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/01n-clear-sky.jpg)`
     );
-  } else if (iconElement === "02d" || "03d" || "04d") {
+  } else if (todayIcon === "02d" || "03d" || "04d") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/02d-03d-04d-clouds.jpg)`
     );
-  } else if (iconElement === "02n" || "03n" || "04n") {
+  } else if (todayIcon === "02n" || "03n" || "04n") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/02n-03n-04n-clouds.jpg)`
     );
-  } else if (iconElement === "09d" || "09n") {
+  } else if (todayIcon === "09d" || "09n") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/09d-09n-shower-rain.jpg)`
     );
-  } else if (iconElement === "10d") {
+  } else if (todayIcon === "10d") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/10d-rain.jpg)`
     );
-  } else if (iconElement === "10n") {
+  } else if (todayIcon === "10n") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/10n-rain.jpg)`
     );
-  } else if (iconElement === "11d" || "11n") {
+  } else if (todayIcon === "11d" || "11n") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/11d-11n-thunderstorm.jpg)`
     );
-  } else if (iconElement === "13d") {
+  } else if (todayIcon === "13d") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/13d-snow.jpg)`
     );
-  } else if (iconElement === "13n") {
+  } else if (todayIcon === "13n") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/13n-snow.jpg)`
     );
-  } else if (iconElement === "50d" || "50n") {
+  } else if (todayIcon === "50d" || "50n") {
     backgroundImage.setAttribute(
       "style",
       `background-image:url(src/img/50d-50n-mist.jpg)`

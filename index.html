@@ -28,14 +28,6 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <div
-            class="row align-items-center justify-content-center principal-cities"
-          >
-            <div class="col-auto">Mexico</div>
-            <div class="col-auto">London</div>
-            <div class="col-auto">Frankfurt</div>
-            <div class="col-auto">Tokyo</div>
-          </div>
           <form id="search-form">
             <div class="row g-1 justify-content-center search-engine">
               <div class="col-sm-6 search-engine-element">
@@ -70,14 +62,23 @@
           <div class="principal-weather">
             <h1 id="city"></h1>
             <h2>Last updated: <span id="date"></span></h2>
-            <h3>
-              <span id="temperature"></span>
-              <span class="units">
-                <a href="#" class="active" id="celsiusLink">°C</a> |
-                <a href="#" id="fahrenheitLink">°F</a>
-              </span>
-            </h3>
-            <h4 id="description"></h4>
+
+            <div class="row align-items-center justify-content-center">
+              <div class="col-auto">
+                <img src="" id="icon" class="icon" />
+              </div>
+              <div class="col-auto">
+                <h3>
+                  <span id="temperature"></span>
+                  <span class="units">
+                    <a href="#" class="active" id="celsiusLink">°C</a> |
+                    <a href="#" id="fahrenheitLink">°F</a>
+                  </span>
+                </h3>
+                <h4 id="description"></h4>
+              </div>
+            </div>
+
             <h5>Humidity: <span id="humidity"></span>%</h5>
             <h6>Wind: <span id="wind"></span> km/h</h6>
           </div>
@@ -90,7 +91,8 @@
           >
             Open-source code
           </a>
-          by Ixchel
+          by Ixchel and hosted on
+          <a href="#" target="_blank">Netlify</a>
         </footer>
       </div>
     </div>
