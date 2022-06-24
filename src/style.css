@@ -1,11 +1,15 @@
+body {
+  background-size: cover;
+}
+
 .weather-app-wrapper {
   font-family: "Roboto Flex", sans-serif;
   max-width: 600px;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 .weather-app {
-  padding: 10px;
+  padding: 25px;
 }
 
 .principal-cities {
@@ -32,8 +36,8 @@
 
 .principal-weather {
   text-align: center;
-  color: #0370c6;
-  background: #e9ebee;
+  color: #0466b1;
+  background: rgb(255, 255, 255, 0.7);
   padding: 50px 30px 30px;
   margin: 20px auto;
   width: 305px;
@@ -98,13 +102,10 @@ img {
   text-align: center;
   color: rgb(255, 255, 255);
   background: linear-gradient(
-    111.4deg,
-    rgb(12, 85, 141, 0.7) 8.4%,
-    rgb(162, 195, 238) 35.4%,
-    rgb(205, 181, 93, 0.75) 70.6%,
-    rgb(249, 140, 69, 0.8) 88.2%
+    -180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(0, 0, 0, 0.4) 100%
   );
-
   font-size: 14px;
   font-family: "Roboto Flex", sans-serif;
   padding: 10px 0;
